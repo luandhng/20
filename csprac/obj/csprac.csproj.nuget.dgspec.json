@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/l/repos/cs-practice/csprac/csprac.csproj": {}
+    "C:\\Users\\fjoj3\\OneDrive\\Documents\\g\\cs-practice\\csprac\\csprac.csproj": {}
   },
   "projects": {
-    "/Users/l/repos/cs-practice/csprac/csprac.csproj": {
+    "C:\\Users\\fjoj3\\OneDrive\\Documents\\g\\cs-practice\\csprac\\csprac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/l/repos/cs-practice/csprac/csprac.csproj",
+        "projectUniqueName": "C:\\Users\\fjoj3\\OneDrive\\Documents\\g\\cs-practice\\csprac\\csprac.csproj",
         "projectName": "csprac",
-        "projectPath": "/Users/l/repos/cs-practice/csprac/csprac.csproj",
-        "packagesPath": "/Users/l/.nuget/packages/",
-        "outputPath": "/Users/l/repos/cs-practice/csprac/obj/",
+        "projectPath": "C:\\Users\\fjoj3\\OneDrive\\Documents\\g\\cs-practice\\csprac\\csprac.csproj",
+        "packagesPath": "C:\\Users\\fjoj3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fjoj3\\OneDrive\\Documents\\g\\cs-practice\\csprac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/l/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\fjoj3\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\fjoj3\\.dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
