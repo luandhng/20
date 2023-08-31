@@ -18,13 +18,13 @@ const Person = ({ name }: PersonModel) => {
 
         <div className="flex justify-between border p-2 rounded-lg">
           <div className="">09:30</div>
-          <div className="">30'</div>
+          <div className="">30</div>
           <div className="">17:00</div>
         </div>
 
         <div className="flex justify-between border p-2 rounded-lg">
           <div className="">09:30</div>
-          <div className="">30'</div>
+          <div className="">30</div>
           <div className="">17:00</div>
         </div>
       </div>
