@@ -13,8 +13,8 @@ const Box = ({ name }: BoxModel) => {
     <div
       onClick={() => setCheckIn((prev) => !prev)}
       className={`flex ${
-        checkIn ? `bg-blue-700` : `bg-neutral-900`
-      } cursor-pointer select-none justify-center items-center border border-neutral-800 font-medium text-7xl text-center`}
+        checkIn ? `bg-blue-700` : `bg-[#1d1d1d]`
+      } cursor-pointer select-none rounded-xl justify-center items-center border border-neutral-800 font-medium text-8xl text-center`}
     >
       {name}
     </div>
