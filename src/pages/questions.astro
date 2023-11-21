@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Form from '../components/Form'
+import Question from "../components/Question";
+---
+
+<Layout title="My Years">
+    <div>
+        <Question client:load />
+        <Form client:load/>
+    </div>
+</Layout>
+
+
