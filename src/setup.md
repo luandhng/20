@@ -1,3 +1,3 @@
 # Setup
 
-Just install it lol
+Just install it lol dont be scare
