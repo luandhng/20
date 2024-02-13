@@ -4,6 +4,21 @@
 
 - [Rust](./rust.md)
 - [Go](./go.md)
+- [JavaScript](./javascript.md)
+- [SQL](./sql.md)
+
+# Programming
+
+- [OOP](./oop.md)
+
+  - [Encapsulation](./oop_encapsulation.md)
+  - [Abstraction](./oop_abstractio.md)
+  - [Inheritance](./oop_inheritance.md)
+  - [Polymorphism](./oop_polymorphism.md)
+
+- [Functional Programming](./functional_programming.md)
+- [Algorithms](./algorithms.md)
+- [Data Structures](./data_structures.md)
 
 # Frameworks
 
