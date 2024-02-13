@@ -1,10 +1,18 @@
 # Server Fetching
 
-## Loading state while fetching data
+### Loading state while fetching data
 
 add `loading to app/loading.tsx`
 
-## With Supabase
+### Parallel requests
+
+#### 1. First solution: Promise.all
+
+`const [movies, videos] = await Promise.all([getMovie(id), getVideos(id)])`
+
+#### 2. Second solution: Suspension
+
+### With Supabase
 
 ```
 import { supabase } from "@/supabase";

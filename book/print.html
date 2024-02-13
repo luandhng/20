@@ -245,9 +245,13 @@ export default App
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-fetching"><a class="header" href="#server-fetching">Server Fetching</a></h1>
-<h2 id="loading-state-while-fetching-data"><a class="header" href="#loading-state-while-fetching-data">Loading state while fetching data</a></h2>
+<h3 id="loading-state-while-fetching-data"><a class="header" href="#loading-state-while-fetching-data">Loading state while fetching data</a></h3>
 <p>add <code>loading to app/loading.tsx</code></p>
-<h2 id="with-supabase"><a class="header" href="#with-supabase">With Supabase</a></h2>
+<h3 id="parallel-requests"><a class="header" href="#parallel-requests">Parallel requests</a></h3>
+<h4 id="1-first-solution-promiseall"><a class="header" href="#1-first-solution-promiseall">1. First solution: Promise.all</a></h4>
+<p><code>const [movies, videos] = await Promise.all([getMovie(id), getVideos(id)])</code></p>
+<h4 id="2-second-solution-suspension"><a class="header" href="#2-second-solution-suspension">2. Second solution: Suspension</a></h4>
+<h3 id="with-supabase"><a class="header" href="#with-supabase">With Supabase</a></h3>
 <pre><code>import { supabase } from "@/supabase";
 
 const fetchData = async () =&gt; {
