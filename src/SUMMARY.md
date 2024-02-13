@@ -31,6 +31,7 @@
   - [Server Fetching](./next_js_server_fetching.md)
   - [404](./next_js_404.md)
   - [Hooks](./next_js_hooks.md)
+  - [Local Font](./next_js_local_font.md)
 
 # Back-end
 
