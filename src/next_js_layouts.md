@@ -2,14 +2,12 @@
 
 - Layouts are nested
 
-```
+```tsx
 <Layout>
-    <SecondLayout>
-        <Component />
-    </SecondLayout>
+  <SecondLayout>
+    <Component />
+  </SecondLayout>
 </Layout>
-
-
 ```
 
 - `Layout` is the main layout in app folder.

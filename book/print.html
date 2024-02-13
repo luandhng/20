@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Languages</li><li class="chapter-item expanded "><a href="rust.html"><strong aria-hidden="true">1.</strong> Rust</a></li><li class="chapter-item expanded "><a href="go.html"><strong aria-hidden="true">2.</strong> Go</a></li><li class="chapter-item expanded affix "><li class="part-title">Frameworks</li><li class="chapter-item expanded "><a href="next_js.html"><strong aria-hidden="true">3.</strong> NextJS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="next_js_server.html"><strong aria-hidden="true">3.1.</strong> Server Component</a></li><li class="chapter-item expanded "><a href="next_js_layouts.html"><strong aria-hidden="true">3.2.</strong> Layouts</a></li><li class="chapter-item expanded "><a href="next_js_route_group.html"><strong aria-hidden="true">3.3.</strong> Route Group</a></li><li class="chapter-item expanded "><a href="next_js_metadata.html"><strong aria-hidden="true">3.4.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="next_js_dynamic_routes.html"><strong aria-hidden="true">3.5.</strong> Dynamic Routes</a></li><li class="chapter-item expanded "><a href="next_js_server_fetching.html"><strong aria-hidden="true">3.6.</strong> Server Fetching</a></li><li class="chapter-item expanded "><a href="next_js_404.html"><strong aria-hidden="true">3.7.</strong> 404</a></li><li class="chapter-item expanded "><a href="next_js_hooks.html"><strong aria-hidden="true">3.8.</strong> Hooks</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Back-end</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Languages</li><li class="chapter-item expanded "><a href="rust.html"><strong aria-hidden="true">1.</strong> Rust</a></li><li class="chapter-item expanded "><a href="go.html"><strong aria-hidden="true">2.</strong> Go</a></li><li class="chapter-item expanded affix "><li class="part-title">Frameworks</li><li class="chapter-item expanded "><a href="next_js.html"><strong aria-hidden="true">3.</strong> NextJS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="next_js_server.html"><strong aria-hidden="true">3.1.</strong> Server Component</a></li><li class="chapter-item expanded "><a href="next_js_layouts.html"><strong aria-hidden="true">3.2.</strong> Layouts</a></li><li class="chapter-item expanded "><a href="next_js_route_group.html"><strong aria-hidden="true">3.3.</strong> Route Group</a></li><li class="chapter-item expanded "><a href="next_js_metadata.html"><strong aria-hidden="true">3.4.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="next_js_dynamic_routes.html"><strong aria-hidden="true">3.5.</strong> Dynamic Routes</a></li><li class="chapter-item expanded "><a href="next_js_server_fetching.html"><strong aria-hidden="true">3.6.</strong> Server Fetching</a></li><li class="chapter-item expanded "><a href="next_js_404.html"><strong aria-hidden="true">3.7.</strong> 404</a></li><li class="chapter-item expanded "><a href="next_js_hooks.html"><strong aria-hidden="true">3.8.</strong> Hooks</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Back-end</li><li class="chapter-item expanded "><a href="supabase.html"><strong aria-hidden="true">4.</strong> Supabase</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="supabase_install.html"><strong aria-hidden="true">4.1.</strong> Install</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -177,7 +177,6 @@
                         <h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="go"><a class="header" href="#go">Go</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nextjs"><a class="header" href="#nextjs">NextJS</a></h1>
-<p>A React Framework.</p>
 <h2 id="manual-setup"><a class="header" href="#manual-setup">Manual Setup</a></h2>
 <pre><code>npm init -y
 
@@ -203,13 +202,11 @@ export default App
 <ul>
 <li>Layouts are nested</li>
 </ul>
-<pre><code>&lt;Layout&gt;
-    &lt;SecondLayout&gt;
-        &lt;Component /&gt;
-    &lt;/SecondLayout&gt;
+<pre><code class="language-tsx">&lt;Layout&gt;
+  &lt;SecondLayout&gt;
+    &lt;Component /&gt;
+  &lt;/SecondLayout&gt;
 &lt;/Layout&gt;
-
-
 </code></pre>
 <ul>
 <li><code>Layout</code> is the main layout in app folder.</li>
@@ -223,12 +220,12 @@ export default App
 <li>Metadata can merge.</li>
 <li>Only use metadata on server component.</li>
 </ul>
-<pre><code class="language-app/about-us">export const metadata
+<pre><code class="language-typescript">export const metadata;
 </code></pre>
 <ul>
 <li>We can turn metadata into template</li>
 </ul>
-<pre><code>export const metadata: Metadata = {
+<pre><code class="language-typescript">export const metadata: Metadata = {
   title: {
     template: "%s | Something here",
     default: "Loading...",
@@ -252,7 +249,7 @@ export default App
 <p><code>const [movies, videos] = await Promise.all([getMovie(id), getVideos(id)])</code></p>
 <h4 id="2-second-solution-suspension"><a class="header" href="#2-second-solution-suspension">2. Second solution: Suspension</a></h4>
 <h3 id="with-supabase"><a class="header" href="#with-supabase">With Supabase</a></h3>
-<pre><code>import { supabase } from "@/supabase";
+<pre><code class="language-typescript">import { supabase } from "@/supabase";
 
 const fetchData = async () =&gt; {
   let { data: watchlist } = await supabase.from("watchlist").select("*");
@@ -275,6 +272,16 @@ export default async function Home() {
 <p><code>app/not_found.tsx</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hooks"><a class="header" href="#hooks">Hooks</a></h1>
 <p><code>const path = usePathName()</code> - get url path name</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="supabase"><a class="header" href="#supabase">Supabase</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="install"><a class="header" href="#install">Install</a></h1>
+<p><code>npm install @supabase/supabase-js</code></p>
+<pre><code class="language-typescript">import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  "https://xyzcompany.supabase.co",
+  "public-anon-key"
+);
+</code></pre>
 
                     </main>
 

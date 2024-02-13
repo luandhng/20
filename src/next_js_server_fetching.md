@@ -14,7 +14,7 @@ add `loading to app/loading.tsx`
 
 ### With Supabase
 
-```
+```typescript
 import { supabase } from "@/supabase";
 
 const fetchData = async () => {

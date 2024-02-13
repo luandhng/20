@@ -1,7 +1,5 @@
 # NextJS
 
-A React Framework.
-
 ## Manual Setup
 
 ```

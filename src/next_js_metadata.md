@@ -3,13 +3,13 @@
 - Metadata can merge.
 - Only use metadata on server component.
 
-```app/about-us
-export const metadata
+```typescript
+export const metadata;
 ```
 
 - We can turn metadata into template
 
-```
+```typescript
 export const metadata: Metadata = {
   title: {
     template: "%s | Something here",
