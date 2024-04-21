@@ -4,7 +4,7 @@ import { addTopicServer } from "@/actions/addTopicServer";
 import { removeTopicServer } from "@/actions/removeTopicServer";
 import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface TopicsProps {
   notes: any;
@@ -13,6 +13,7 @@ interface TopicsProps {
 export const Topics = ({ notes }: TopicsProps) => {
   const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
   const { data, setData, addData, removeTopic } = useNotesDataStore();
+  const [showTopics, setShowTopics] = useState(false);
   const uuid = crypto.randomUUID();
 
   useEffect(() => {
@@ -21,25 +22,35 @@ export const Topics = ({ notes }: TopicsProps) => {
 
   return (
     <div className="col-span-2 border-r border-neutral-400">
+      {/* For Mobile */}
+      <button
+        onClick={() => setShowTopics(!showTopics)}
+        className="lg:hidden p-2 bg-black text-white flex justify-center w-full border-b"
+      >
+        Topics
+      </button>
+
       <button
         onClick={async () => {
           addData({ this_topic: uuid, topic: "", note: "" });
           setSelectedTopic(uuid);
           addTopicServer(uuid);
         }}
-        className="p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full"
+        className={`${
+          !showTopics && "max-lg:hidden"
+        } p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full`}
       >
         Add a topic
       </button>
-      <div>
+      <div className="">
         {data?.map((item: any, index: number) => (
           <div
             onClick={() => {
               setSelectedTopic(item.this_topic);
             }}
             key={index}
-            className={`${
-              selectedTopic === item.topic && "bg-neutral-200"
+            className={`${selectedTopic === item.topic && "bg-neutral-200"} ${
+              !showTopics && "max-lg:hidden"
             } border-b cursor-pointer select-none flex items-center justify-between border-neutral-400 hover:bg-neutral-200 p-3`}
           >
             <p>{item.topic}</p>
