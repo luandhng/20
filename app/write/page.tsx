@@ -6,13 +6,11 @@ const Write = async () => {
 
   return (
     <main className="">
-      <div className="">
-        {notes?.map((note, index) => (
-          <div key={index} className="">
-            <div className="">{note.topic}</div>
-          </div>
-        ))}
-      </div>
+      {notes?.map((note, index) => (
+        <div key={index} className="">
+          <div className="">{note.topic}</div>
+        </div>
+      ))}
     </main>
   );
 };
