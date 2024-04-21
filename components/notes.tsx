@@ -14,8 +14,11 @@ export const Notes = ({ data }: NotesProps) => {
       {data?.map(
         (item: any, index: number) =>
           item.topic === selectedTopic && (
-            <div key={index} className="p-3">
-              {item.note}
+            <div key={index} className="">
+              <div className=" p-3 border-b border-neutral-400 font-semibold">
+                {item.topic}
+              </div>
+              <div className="p-3">{item.note}</div>
             </div>
           )
       )}
