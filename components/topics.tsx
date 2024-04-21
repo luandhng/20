@@ -4,6 +4,7 @@ import { addTopicServer } from "@/actions/addTopicServer";
 import { removeTopicServer } from "@/actions/removeTopicServer";
 import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
+import { useShowTopicsStore } from "@/stores/useShowTopicsStore";
 import { useEffect, useState } from "react";
 
 interface TopicsProps {
@@ -13,7 +14,7 @@ interface TopicsProps {
 export const Topics = ({ notes }: TopicsProps) => {
   const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
   const { data, setData, addData, removeTopic } = useNotesDataStore();
-  const [showTopics, setShowTopics] = useState(false);
+  const { showTopics, setShowTopics } = useShowTopicsStore();
   const uuid = crypto.randomUUID();
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export const Topics = ({ notes }: TopicsProps) => {
           <div
             onClick={() => {
               setSelectedTopic(item.this_topic);
+              setShowTopics(false);
             }}
             key={index}
             className={`${selectedTopic === item.topic && "bg-neutral-200"} ${

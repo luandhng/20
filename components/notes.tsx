@@ -4,13 +4,15 @@ import { updateNoteServer } from "@/actions/updateNoteServer";
 import { updateTopicServer } from "@/actions/updateTopicServer";
 import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
+import { useShowTopicsStore } from "@/stores/useShowTopicsStore";
 
 export const Notes = () => {
   const { selectedTopic } = useSelectedTopicStore();
   const { data, updateTopic, updateNote } = useNotesDataStore();
+  const { showTopics } = useShowTopicsStore();
 
   return (
-    <div className="col-span-10 h-full">
+    <div className={`${showTopics && "max-lg:hidden"} col-span-10 h-full`}>
       {data?.map(
         (item: any, index: number) =>
           item.this_topic === selectedTopic && (
