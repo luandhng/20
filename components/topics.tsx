@@ -10,7 +10,8 @@ interface TopicsProps {
 
 export const Topics = ({ notes }: TopicsProps) => {
   const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
-  const { data, setData, addData } = useNotesDataStore();
+  const { data, setData, addData, removeTopic } = useNotesDataStore();
+  const uuid = crypto.randomUUID();
 
   useEffect(() => {
     setData(notes);
@@ -19,9 +20,10 @@ export const Topics = ({ notes }: TopicsProps) => {
   return (
     <div className="col-span-2 border-r border-neutral-400">
       <button
-        onClick={() =>
-          addData({ this_topic: crypto.randomUUID(), topic: "", notes: "" })
-        }
+        onClick={() => {
+          addData({ this_topic: uuid, topic: "", note: "" });
+          setSelectedTopic(uuid);
+        }}
         className="p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full"
       >
         Add a topic
@@ -29,7 +31,7 @@ export const Topics = ({ notes }: TopicsProps) => {
       <div>
         {data?.map((item: any, index: number) => (
           <div
-            onClick={() => setSelectedTopic(item.topic)}
+            onClick={() => setSelectedTopic(item.this_topic)}
             key={index}
             className={`${
               selectedTopic === item.topic && "bg-neutral-200"
@@ -37,7 +39,7 @@ export const Topics = ({ notes }: TopicsProps) => {
           >
             <p>{item.topic}</p>
 
-            <button>
+            <button onClick={() => removeTopic(item.this_topic)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -45,9 +47,9 @@ export const Topics = ({ notes }: TopicsProps) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M3 6h18" />
                 <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
