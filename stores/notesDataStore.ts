@@ -18,7 +18,7 @@ type Store = {
 export const useNotesDataStore = create<Store>()((set) => ({
   data: [],
   setData: (e) => set((state) => ({ data: (state.data = e) })),
-  addData: (e) => set((state) => ({ data: [...state.data, e] })),
+  addData: (e) => set((state) => ({ data: [e, ...state.data] })),
   removeTopic: (this_topic: string) =>
     set((state) => ({
       data: state.data.filter((item) => item.this_topic !== this_topic),
