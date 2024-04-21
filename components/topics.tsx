@@ -1,6 +1,7 @@
 "use client";
 
 import { addTopicServer } from "@/actions/addTopicServer";
+import { removeTopicServer } from "@/actions/removeTopicServer";
 import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
 import { useEffect } from "react";
@@ -33,7 +34,9 @@ export const Topics = ({ notes }: TopicsProps) => {
       <div>
         {data?.map((item: any, index: number) => (
           <div
-            onClick={() => setSelectedTopic(item.this_topic)}
+            onClick={() => {
+              setSelectedTopic(item.this_topic);
+            }}
             key={index}
             className={`${
               selectedTopic === item.topic && "bg-neutral-200"
@@ -41,7 +44,12 @@ export const Topics = ({ notes }: TopicsProps) => {
           >
             <p>{item.topic}</p>
 
-            <button onClick={() => removeTopic(item.this_topic)}>
+            <button
+              onClick={async () => {
+                await removeTopicServer({ this_topic: item.this_topic });
+                removeTopic(item.this_topic);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
