@@ -7,9 +7,7 @@ export default function App() {
       <Text className="text-xl text-white font-medium">
         You are not in the zone
       </Text>
-
       {/* <Workers /> */}
-
       <StatusBar style="auto" />
     </View>
   );
