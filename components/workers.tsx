@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { supabase } from "../utils/supabase";
 
-export const Workers = () => {
-  const [workers, setWorkers] = useState<any>();
+export const locations = () => {
+  const [locations, setLocations] = useState<any>();
 
   useEffect(() => {
     const fetchData = async () => {
-      let { data: workers } = await supabase.from("workers").select("*");
-      setWorkers(workers);
+      let { data: locations } = await supabase.from("locations").select("*");
+      setLocations(locations);
     };
 
     fetchData();
@@ -16,7 +16,7 @@ export const Workers = () => {
 
   return (
     <View>
-      {workers?.map((item: any, index: number) => (
+      {locations?.map((item: any, index: number) => (
         <Text key={index}>{item.name}</Text>
       ))}
     </View>
