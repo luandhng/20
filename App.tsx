@@ -91,32 +91,6 @@ export default function App() {
       .insert([{ name: "Tom", location: "DSG Signs Graphics" }]);
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     let { data: locations } = await supabase.from("locations").select("*");
-  //     setLocations(locations);
-
-  //     // Check if the user is inside any of the geofenced regions
-  //     checkIfInsideGeofence(location, locations);
-
-  //     console.log(isInside);
-  //     if (isInside) {
-  //       async () => {
-  //         const { data, error } = await supabase
-  //           .from("punch_time")
-  //           .insert([{ name: "Sam", location: "DSG Signs Graphics" }]);
-
-  //         console.log(data);
-  //         console.log("hello you");
-  //       };
-  //     } else {
-  //       console.log("nope");
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [location]);
-
   const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371e3; // Earth’s mean radius in meters
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
@@ -161,20 +135,6 @@ export default function App() {
           {isInside ? "You are in the zone" : "You are not in the zone"}
         </Text>
       </View>
-
-      {/* <View className="">
-        <View className="border-b border-neutral-400">
-          <Text className="text-xl  border-neutral-400 p-3">Fix the door</Text>
-        </View>
-        <View className="border-b border-neutral-400">
-          <Text className="text-xl  border-neutral-400 p-3">Cut CNC ANU 2</Text>
-        </View>
-        <View className="border-b border-neutral-400">
-          <Text className="text-xl border-neutral-400 p-3">
-            Deliver banners to DSG Signs Graphics
-          </Text>
-        </View>
-      </View> */}
 
       <StatusBar style="auto" />
     </View>
