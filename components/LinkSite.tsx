@@ -8,7 +8,7 @@ interface Props {
 export const LinkSite = ({ text, href }: Props) => {
   return (
     <Link
-      className="text-green-500 border-b w-fit border-green-800"
+      className="text-green-500 hover:text-white"
       target="_blank"
       href={href}
     >
