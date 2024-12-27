@@ -1,7 +1,12 @@
 export const Data = [
+  //  Download
   {
     title: "Download",
     content: [
+      {
+        text: "TorrentGalaxy",
+        link: "https://torrentgalaxy.to/",
+      },
       {
         text: "FMHY",
         link: "https://rentry.org/Piracy-BG",
@@ -14,6 +19,13 @@ export const Data = [
         text: "Steamrip",
         link: "https://steamrip.com/",
       },
+    ],
+  },
+
+  //   Watch
+  {
+    title: "Watch / Read",
+    content: [
       {
         text: "Anime",
         link: "https://hianime.to/home",
@@ -28,6 +40,8 @@ export const Data = [
       },
     ],
   },
+
+  //   X
   {
     title: "X",
     content: [
